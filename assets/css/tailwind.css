@@ -1,78 +1,105 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
- 
+
 @layer base {
-  :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
- 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
- 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
- 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
- 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
- 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
- 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
- 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
- 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
- 
-    --ring: 222.2 84% 4.9%;
- 
-    --radius: 0.5rem;
-  }
- 
-  .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
- 
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
- 
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
- 
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
- 
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
- 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
- 
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
- 
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
- 
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
- 
-    --ring: 212.7 26.8% 83.9%;
+  @layer base {
+    :root {
+      --background: 207.17 83.96% 95.2%;
+      --foreground: 0 0% 9.8%;
+      --muted: 25 24% 10%;
+      --muted-foreground: 25 4% 68%;
+      --popover: 210 100% 90.98%;
+      --popover-foreground: 0 0% 99.61%;
+      --card: 210 100% 90.9%;
+      --card-foreground: 0 0% 9.8%;
+      --border: 25 12% 12%;
+      --input: 25 12% 12%;
+      --primary: 220.8 100% 75.49%;
+      --primary-foreground: 0 0% 0%;
+      --secondary: 25 5% 18%;
+      --secondary-foreground: 25 5% 78%;
+      --accent: 25 5% 18%;
+      --accent-foreground: 25 5% 78%;
+      --destructive: 0 100% 25.1%;
+      --destructive-foreground: 0 0% 100%;
+      --ring: 0 0% 100%;
+      --radius: 1rem;
+    }
+
+    .dark {
+      --background: 222.86 28% 4.9%;
+      --foreground: 0 0% 99.61%;
+      --muted: 25 24% 10%;
+      --muted-foreground: 25 4% 68%;
+      --popover: 25 35% 4%;
+      --popover-foreground: 0 0% 99.61%;
+      --card: 229.09 26.83% 8.04%;
+      --card-foreground: 0 0% 99.61%;
+      --border: 25 12% 12%;
+      --input: 25 12% 12%;
+      --primary: 220.8 100% 75.49%;
+      --primary-foreground: 0 0% 0%;
+      --secondary: 25 5% 18%;
+      --secondary-foreground: 25 5% 78%;
+      --accent: 25 5% 18%;
+      --accent-foreground: 25 5% 78%;
+      --destructive: 0 100% 25.1%;
+      --destructive-foreground: 0 0% 100%;
+      --ring: 0 0% 100%;
+    }
   }
 }
- 
+
 @layer base {
   * {
     @apply border-border;
   }
+
   body {
     @apply bg-background text-foreground;
+    font-family: "ClashDisplay", sans-serif;
+  }
+
+  @font-face {
+    font-family: "ClashDisplay";
+    src: url("@/assets/fonts/ClashDisplay-Extralight.otf") format("opentype");
+    font-weight: 200;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: "ClashDisplay";
+    src: url("@/assets/fonts/ClashDisplay-Light.otf") format("opentype");
+    font-weight: 300;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: "ClashDisplay";
+    src: url("@/assets/fonts/ClashDisplay-Regular.otf") format("opentype");
+    font-weight: 400;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: "ClashDisplay";
+    src: url("@/assets/fonts/ClashDisplay-Medium.otf") format("opentype");
+    font-weight: 500;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: "ClashDisplay";
+    src: url("@/assets/fonts/ClashDisplay-Semibold.otf") format("opentype");
+    font-weight: 600;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: "ClashDisplay";
+    src: url("@/assets/fonts/ClashDisplay-Bold.otf") format("opentype");
+    font-weight: 700;
+    font-style: normal;
   }
 }
