@@ -1,5 +1,5 @@
 <template>
-  <main class="container my-10">
+  <main class="container px-32">
     <slot />
   </main>
 </template>

@@ -14,7 +14,7 @@ const colorMode = useColorMode();
 <template>
   <DropdownMenu>
     <DropdownMenuTrigger as-child>
-      <Button variant="outline" class="bg-foreground/5 text-xs tracking-wide shadow-inner">
+      <Button variant="outline" class="text-xs tracking-wide">
         {{ colorMode.preference }}
       </Button>
     </DropdownMenuTrigger>
