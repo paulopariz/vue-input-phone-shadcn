@@ -14,7 +14,9 @@ import FlagCountry from "./FlagCountry.vue";
 
 import { CaretSortIcon, CheckIcon } from "@radix-icons/vue";
 
-import { countriesByContinent, type ICountry } from "@/utils/phone";
+import { countriesByContinent, type ICountry } from "./countries";
+
+import { vMaska } from "maska";
 
 const props = defineProps<{
   modelValue?: string;
@@ -26,6 +28,10 @@ const emit = defineEmits<{
   // eslint-disable-next-line no-unused-vars
   (e: "update:modelValue", value: string): void;
 }>();
+
+const directives = {
+  maska: vMaska,
+};
 
 const allCountries = computed(() => countriesByContinent);
 

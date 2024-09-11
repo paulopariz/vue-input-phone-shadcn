@@ -1,5 +1,5 @@
 <template>
-  <header class="h-[80dvh]">
+  <header class="h-screen">
     <section class="grid h-full place-content-center">
       <div class="grid gap-3">
         <div class="grid gap-1.5">
