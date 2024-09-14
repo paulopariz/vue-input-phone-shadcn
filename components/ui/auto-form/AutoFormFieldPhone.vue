@@ -19,8 +19,9 @@ defineProps<FieldProps>();
       <FormControl class="w-full">
         <slot v-bind="slotProps">
           <PhoneInput
+            default-country="NL"
             v-model="phone"
-            v-bind="{ ...slotProps.componentField, ...config?.inputProps }"
+            v-bind="{ ...slotProps.componentField }"
           />
         </slot>
       </FormControl>

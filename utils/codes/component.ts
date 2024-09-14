@@ -1,4 +1,4 @@
-<script setup lang="ts">
+export const component = `<script setup lang="ts">
 import { Button } from "@/components/ui/button";
 import {
   Command,
@@ -30,7 +30,6 @@ const emit = defineEmits<{
   (e: "update:modelValue", value: string): void;
 }>();
 
-const refDefaultCountry = ref(props.defaultCountry);
 const allCountries = computed(() => countriesByContinent);
 
 const open = ref(false);
@@ -54,6 +53,7 @@ const languageToCountry: Record<string, string> = {
 
 function findCountry(countryCode: string) {
   const allContinents = Object.values(allCountries.value);
+  console.log("allContinents", allContinents);
 
   for (const continent of allContinents) {
     const foundByCode = continent.find((country) => country.code === countryCode);
@@ -67,13 +67,12 @@ const countryCode = getCountryCodeFromLanguage(navigator.language);
 const countrySelected = ref(findCountry(countryCode));
 
 function getCountryCodeFromLanguage(language: string): string {
-  return refDefaultCountry.value || languageToCountry[language] || "US";
+  return props.defaultCountry || languageToCountry[language] || "US";
 }
 
 function selectedCountry(data: ICountry) {
   if (props.disabled) return;
   phoneNumber.value = "";
-  refDefaultCountry.value = "";
   countrySelected.value = data;
   open.value = false;
 }
@@ -152,3 +151,4 @@ watch(phoneNumber, (value) => {
     </PopoverContent>
   </Popover>
 </template>
+`;

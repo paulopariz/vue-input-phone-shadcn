@@ -1,0 +1,94 @@
+{
+  "env": {
+    "browser": true,
+    "es2021": true
+  },
+
+  "extends": [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:vue/vue3-essential"
+  ],
+
+  "parserOptions": {
+    "ecmaVersion": "latest",
+    "parser": "@typescript-eslint/parser",
+    "sourceType": "module",
+    "project": "./tsconfig.json",
+    "extraFileExtensions": [".vue"]
+  },
+
+  "plugins": ["@typescript-eslint", "vue"],
+
+  "ignorePatterns": ["commitlint.config.ts"],
+  "rules": {
+    "vue/html-indent": ["error", 2],
+    "vue/html-self-closing": [
+      "error",
+      {
+        "html": {
+          "void": "always",
+          "normal": "always",
+          "component": "always"
+        },
+        "svg": "always",
+        "math": "always"
+      }
+    ],
+
+    "vue/attributes-order": [
+      "warn",
+      {
+        "order": [
+          "DEFINITION", // is
+          "LIST_RENDERING", // v-for
+          "CONDITIONALS", // v-if, v-else-if, v-else, v-show, v-cloak
+          "RENDER_MODIFIERS", // v-pre, v-once
+          "GLOBAL", // id
+          ["UNIQUE", "SLOT"], // ref, key, slot
+          "TWO_WAY_BINDING", // v-model
+          "OTHER_DIRECTIVES", // Other directives
+          "OTHER_ATTR", // All other attributes
+          "EVENTS", // @click, @submit, etc.
+          "CONTENT" // v-text, v-html
+        ]
+      }
+    ],
+
+    "prefer-arrow-callback": "off",
+    "func-style": ["error", "declaration"],
+
+    "vue/component-tags-order": [
+      "error",
+      {
+        "order": ["script", "template", "style"]
+      }
+    ],
+
+    "vue/multi-word-component-names": "off",
+    "linebreak-style": ["error", "unix"],
+    "quotes": ["error", "double"],
+    "semi": ["error", "always"],
+    "no-unused-vars": "error"
+  },
+  "globals": {
+    "definePageMeta": "readonly",
+    "useCookie": "readonly",
+    "useNuxtApp": "readonly",
+    "useRoute": "readonly",
+    "useColorMode": "readonly",
+    "useSlots": "readonly",
+    "useI18n": "readonly",
+    "useHead": "readonly",
+    "ref": "readonly",
+    "onMounted": "readonly",
+    "onUnmounted": "readonly",
+    "onBeforeUnmount": "readonly",
+    "watch": "readonly",
+    "watchEffect": "readonly",
+    "computed": "readonly",
+    "markRaw": "readonly",
+    "defineComponent": "readonly",
+    "h": "readonly"
+  }
+}

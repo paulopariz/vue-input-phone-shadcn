@@ -22,6 +22,7 @@
     "nuxt": "^3.13.1",
     "radix-vue": "^1.9.5",
     "shadcn-nuxt": "^0.10.4",
+    "shiki": "^1.17.6",
     "tailwind-merge": "^2.5.2",
     "tailwindcss-animate": "^1.0.7",
     "vee-validate": "^4.13.2",

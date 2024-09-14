@@ -73,6 +73,15 @@ module.exports = {
           from: { height: "var(--radix-collapsible-content-height)" },
           to: { height: 0 },
         },
+        "text-gradient": {
+          to: {
+            backgroundPosition: "200% center",
+          },
+        },
+        zoom: {
+          "0%": { transform: "scale(0) rotate(10deg)" },
+          "100%": { transform: "scale(1) rotate(0)" },
+        },
       },
 
       animation: {
@@ -81,13 +90,7 @@ module.exports = {
         "accordion-up": "accordion-up 0.2s ease-out",
         "collapsible-down": "collapsible-down 0.2s ease-in-out",
         "collapsible-up": "collapsible-up 0.2s ease-in-out",
-      },
-      keyframes: {
-        "text-gradient": {
-          to: {
-            backgroundPosition: "200% center",
-          },
-        },
+        zoom: "zoom 0.3s both",
       },
     },
   },

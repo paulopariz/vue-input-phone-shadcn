@@ -1,5 +1,5 @@
 <template>
-  <main class="container my-10 px-32">
+  <main class="container max-w-screen-xl px-32">
     <slot />
   </main>
 </template>
