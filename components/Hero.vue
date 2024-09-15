@@ -12,19 +12,15 @@ function scrollToDocumentation() {
     <section class="grid h-full place-content-center">
       <div class="grid gap-3">
         <div class="grid gap-1.5">
-          <p class="text-xs font-medium tracking-wider">
-            📅 Last update:
-            <span class="font-normal italic text-muted-foreground"> Sep 9, 2024 </span>
-          </p>
           <p class="text-xs font-medium tracking-wider">✨ Open source</p>
         </div>
         <h1
-          class="my-2 inline-flex animate-text-gradient items-center justify-between gap-2 text-nowrap bg-gradient-to-r from-[hsl(var(--foreground))] via-[#6e6e6e] to-[hsl(var(--foreground))] bg-[200%_auto] bg-clip-text text-center text-5xl font-bold tracking-wider text-transparent"
+          class="my-2 inline-flex animate-text-gradient items-center justify-between gap-2 text-nowrap bg-gradient-to-r from-[hsl(var(--foreground))] via-[#6e6e6e] to-[hsl(var(--foreground))] bg-[200%_auto] bg-clip-text text-center text-5xl font-bold tracking-wider text-transparent max-md:text-wrap max-md:text-start max-sm:text-3xl"
         >
           Vue Input Phone Shadcn
         </h1>
       </div>
-      <p class="tracking-wider text-muted-foreground">
+      <p class="tracking-wider text-muted-foreground max-sm:text-sm">
         The Vue Input Phone Shadcn library is an open source project, based on Shadcn. It offers an
         excellent component for entering phone numbers, supporting 194 countries, with automatic
         formatting and advanced validation to detect invalid formats. Plus, it's highly

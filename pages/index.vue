@@ -83,7 +83,7 @@ const exportComponentPhone: ICode = {
     <div id="docs">
       <h1 class="mb-6 text-3xl font-semibold">Configure components:</h1>
 
-      <div class="ml-4 mt-12 grid gap-20 border-l pl-8">
+      <div class="ml-4 mt-12 grid gap-20 border-l pl-8 max-sm:ml-0 max-sm:border-l-0 max-sm:pl-0">
         <Docs>
           <DocsTitle position="1"> Install components </DocsTitle>
           <DocsSubtitle>

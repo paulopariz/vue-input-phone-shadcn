@@ -43,7 +43,7 @@ onMounted(async () => {
 </script>
 
 <template>
-  <section class="relative">
+  <section class="relative max-w-[99%] overflow-hidden">
     <main
       ref="mainRef"
       class="mt-5 max-h-[400px] w-full overflow-hidden rounded-md border border-[#201f23] transition-all"
@@ -70,7 +70,7 @@ onMounted(async () => {
           />
           <PhosphorIconCheck v-else size="15" class="animate-zoom text-emerald-400" />
         </Button>
-        <div class="mt-0 text-sm">
+        <div class="mt-0 max-w-[95%] overflow-hidden text-sm">
           <pre v-html="highlightedCode" />
         </div>
       </div>

@@ -203,6 +203,8 @@ const flagUrl = computed(() => {
 ## 4. Countries
 
 Now let's add the JSON that contains the country information and corresponding phone formatting. To do this, create a file called `countries.ts`:
+- [`Full code available here`](https://github.com/paulopariz/vue-input-phone-shadcn/blob/master/components/ui/phone/countries.ts)
+
 
 ```ts
 type Continent = "Africa" | "Asia" | "Europe" | "Oceania" | "South America" | "North America";

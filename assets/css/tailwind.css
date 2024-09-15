@@ -82,6 +82,9 @@
     font-family: "ClashDisplay", sans-serif;
     .shiki {
       background-color: transparent !important;
+      text-wrap: nowrap !important;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
   }
 
