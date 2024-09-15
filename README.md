@@ -1,5 +1,6 @@
+# Vue Input Phone Shadch - Component Documentation
 
-# Phone Input Component Documentation
+[VueInputPhoneShadcn.webm](https://github.com/user-attachments/assets/2038fbcd-c0dc-4a6b-a4fe-c0a655ff1945)
 
 ## 1. Configure components
 
