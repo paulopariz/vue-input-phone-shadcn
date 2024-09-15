@@ -15,6 +15,20 @@ npx shadcn-vue@latest add command
 npx shadcn-vue@latest add popover
 ```
 
+### 1.2 Install vMaska
+
+To format the number, install the vMaska library:
+
+```bash
+npm install maska
+#or
+yarn add maska
+#or
+pnpm install maska
+#or
+bun add maska
+```
+
 ## 2. Component `PhoneInput`
 
 In your `components` folder, create a new subfolder called `phone`. Then add a file called `PhoneInput.vue` and insert the following code:
