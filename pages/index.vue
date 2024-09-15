@@ -1,5 +1,7 @@
 <script setup lang="ts">
-import { Separator } from "@/components/ui/separator";
+import { Separator } from "~/components/ui/separator";
+import { Docs, DocsTitle, DocsSubtitle } from "~/components/docs";
+
 import { type ICode, Code } from "~/components/ui/code";
 
 import { install } from "~/utils/codes/install";
@@ -43,59 +45,89 @@ const exportComponentPhone: ICode = {
   <Hero />
 
   <section class="grid gap-28 py-5">
-    <div>
-      <h1 class="mb-6 text-3xl font-semibold">Demo:</h1>
-      <div class="m-auto w-1/2">
-        <ComponentPhoneView />
+    <div class="grid gap-20">
+      <div class="grid gap-5">
+        <h1 class="text-3xl font-semibold">Demo</h1>
+        <div class="rounded-[var(--radius)] border">
+          <div class="m-auto grid h-96 w-2/3 place-items-center">
+            <PhoneInput />
+          </div>
+        </div>
+      </div>
+
+      <div class="grid gap-5">
+        <div>
+          <h1 class="text-3xl font-semibold">Component integrated with AutoForm</h1>
+          <p class="mt-1 tracking-wider text-muted-foreground">
+            Component integrated with Shadcn's AutoForm, with validation via Zod. To access it,
+            <NuxtLink
+              class="font-medium underline"
+              href="https://github.com/paulopariz/vue-input-phone-shadcn/blob/master/components/ui/auto-form/AutoFormFieldPhone.vue"
+              target="_blank"
+            >
+              click here
+            </NuxtLink>
+            .
+          </p>
+        </div>
+        <div class="rounded-[var(--radius)] border">
+          <div class="m-auto grid h-96 w-2/3 place-items-center">
+            <ComponentPhoneView />
+          </div>
+        </div>
       </div>
     </div>
 
     <Separator />
 
-    <div>
+    <div id="docs">
       <h1 class="mb-6 text-3xl font-semibold">Configure components:</h1>
 
-      <div class="grid gap-20">
-        <div>
-          <h2>
-            <span class="font-semibold"> One - </span> install the necessary Shadcn components:
-          </h2>
+      <div class="ml-4 mt-12 grid gap-20 border-l pl-8">
+        <Docs>
+          <DocsTitle position="1"> Install components </DocsTitle>
+          <DocsSubtitle>
+            To get started, install the necessary Shadcn components by running the following
+            commands in the terminal:
+          </DocsSubtitle>
           <Code :code="installComponents" />
-        </div>
+        </Docs>
 
-        <div>
-          <h2>
-            <span class="font-semibold"> Two - </span> In your components folder, create a new
-            subfolder called "phone". Then add a file called PhoneInput.vue and insert the following
-            code:
-          </h2>
+        <Docs>
+          <DocsTitle position="2"> Component PhoneInput </DocsTitle>
+          <DocsSubtitle>
+            In your components folder, create a new subfolder called "phone". Then add a file called
+            PhoneInput.vue and insert the following code:
+          </DocsSubtitle>
           <Code :code="addComponentPhone" />
-        </div>
+        </Docs>
 
-        <div>
-          <h2>
-            <span class="font-semibold"> Three - </span> Now, create a file called FlagCountry.vue
-            and add the following content:
-          </h2>
+        <Docs>
+          <DocsTitle position="3"> Component FlagCountry </DocsTitle>
+          <DocsSubtitle>
+            Now, create a file called FlagCountry.vue in the phone folder and add the following
+            content:
+          </DocsSubtitle>
           <Code :code="addComponentFlag" />
-        </div>
+        </Docs>
 
-        <div>
-          <h2>
-            <span class="font-semibold"> Four - </span> Now let's add the JSON that contains the
-            country information and corresponding phone formatting. To do this, create a file called
-            countries.ts:
-          </h2>
+        <Docs>
+          <DocsTitle position="4"> Countries </DocsTitle>
+          <DocsSubtitle>
+            Now let's add the JSON that contains the country information and corresponding phone
+            formatting. To do this, create a file called countries.ts:
+          </DocsSubtitle>
           <Code :code="jsonCountries" />
-        </div>
+        </Docs>
 
-        <div>
-          <h2>
-            <span class="font-semibold"> Five - </span> Finally, to export the PhoneInput.vue
-            component, create a file called index.ts inside the phone folder:
-          </h2>
+        <Docs>
+          <DocsTitle position="5"> Export </DocsTitle>
+          <DocsSubtitle>
+            Finally, to export the PhoneInput.vue component, create a file called index.ts inside
+            the phone folder:
+          </DocsSubtitle>
           <Code :code="exportComponentPhone" />
-        </div>
+        </Docs>
       </div>
     </div>
   </section>

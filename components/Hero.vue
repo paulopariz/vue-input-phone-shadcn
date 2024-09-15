@@ -1,3 +1,12 @@
+<script setup lang="ts">
+function scrollToDocumentation() {
+  const section = document.getElementById("docs");
+
+  if (!section) return;
+  section.scrollIntoView({ behavior: "smooth" });
+}
+</script>
+
 <template>
   <header class="h-screen">
     <section class="grid h-full place-content-center">
@@ -23,13 +32,16 @@
       </p>
       <div class="mt-7 flex justify-between gap-2">
         <div class="flex justify-between gap-2">
-          <Button class="flex items-center gap-1">
+          <Button class="flex items-center gap-1" @click="scrollToDocumentation">
             Docs <PhosphorIconCaretRight weight="bold" />
           </Button>
-          <Button variant="secondary" class="flex items-center gap-2">
-            Github
-            <PhosphorIconGithubLogo weight="bold" />
-          </Button>
+
+          <NuxtLink href="https://github.com/paulopariz/vue-input-phone-shadcn" target="_blank">
+            <Button variant="secondary" class="flex items-center gap-2">
+              Github
+              <PhosphorIconGithubLogo weight="bold" />
+            </Button>
+          </NuxtLink>
         </div>
         <Theme />
       </div>

@@ -56,7 +56,7 @@ onMounted(async () => {
         </h1>
       </header>
 
-      <div class="group relative flex min-h-12 items-center bg-[#040307] p-4">
+      <div class="group relative flex min-h-12 items-center bg-[#06040b] p-4">
         <Button
           variant="ghost"
           class="absolute right-1 top-2 ml-auto size-8 rounded-[6px] p-0 opacity-100 transition-all hover:bg-[#201f23] group-hover:opacity-100"
@@ -93,11 +93,7 @@ onMounted(async () => {
 
 <style scoped>
 .expand {
-  background: rgb(198, 198, 198);
-  background: linear-gradient(
-    180deg,
-    rgba(198, 198, 198, 0) 0%,
-    rgba(4, 3, 7, 0.8533788515406162) 56%
-  );
+  background: rgb(6, 4, 11);
+  background: linear-gradient(0deg, rgba(6, 4, 11, 1) 37%, rgba(6, 4, 11, 0) 100%);
 }
 </style>
