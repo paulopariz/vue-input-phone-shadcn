@@ -38,7 +38,7 @@ export default defineNuxtConfig({
         },
         {
           property: "og:url",
-          content: "https://github.com/paulopariz/vue-input-phone-shadcn",
+          content: "https://vue-input-phone-shadcn.vercel.app/",
         },
       ],
       link: [{ rel: "icon", type: "image/x-icon", href: "/icon.svg" }],

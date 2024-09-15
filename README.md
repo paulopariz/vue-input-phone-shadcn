@@ -56,6 +56,7 @@ const phoneNumber = ref(props.modelValue || "");
 
 const languageToCountry: Record<string, string> = {
   "pt-BR": "BR",
+  pt: "BR",
   "fr-FR": "FR",
   fr: "FR",
   "it-IT": "IT",
@@ -79,7 +80,7 @@ function findCountry(countryCode: string) {
   return null;
 }
 
-const countryCode = getCountryCodeFromLanguage(navigator.language);
+const countryCode = getCountryCodeFromLanguage(navigator?.language);
 const countrySelected = ref(findCountry(countryCode));
 
 function getCountryCodeFromLanguage(language: string): string {
@@ -192,9 +193,9 @@ const flagUrl = computed(() => {
       <img
         v-if="props.country"
         :src="flagUrl"
-        :alt="props.countryName"
+        :alt="\`Flag of \${props.country}\`"
         :title="props.countryName"
-        class="w-full"
+        class="h-3.5 w-5"
       />
     </span>
   </div>

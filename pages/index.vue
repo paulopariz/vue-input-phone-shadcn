@@ -69,7 +69,7 @@ const exportComponentPhone: ICode = {
               href="https://github.com/paulopariz/vue-input-phone-shadcn/blob/master/components/ui/auto-form/AutoFormFieldPhone.vue"
               target="_blank"
             >
-              click here to access the component.
+              click here to access the component
             </NuxtLink>
             .
           </p>
