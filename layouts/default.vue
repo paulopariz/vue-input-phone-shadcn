@@ -1,5 +1,5 @@
 <template>
-  <main class="container max-w-screen-xl px-32 max-lg:px-6">
+  <main class="container max-w-screen-xl px-32 max-lg:px-3">
     <slot />
   </main>
 
@@ -8,10 +8,15 @@
       class="absolute -top-44 left-1/2 -z-10 size-64 -translate-x-1/2 rounded-full bg-border blur-2xl"
     />
 
-    <p class="text-sm">
+    <p class="flex gap-1 text-sm">
       Created by:
-      <NuxtLink target="_blank" href="https://github.com/paulopariz" class="font-medium underline">
+      <NuxtLink
+        target="_blank"
+        href="https://github.com/paulopariz"
+        class="flex items-center font-medium underline"
+      >
         paulopariz
+        <PhosphorIconArrowUpRight />
       </NuxtLink>
     </p>
   </footer>

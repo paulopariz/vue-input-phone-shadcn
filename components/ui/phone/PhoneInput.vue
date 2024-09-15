@@ -49,6 +49,7 @@ const phoneNumber = ref(modelValue || "");
 
 const languageToCountry: Record<string, string> = {
   "pt-BR": "BR",
+  pt: "BR",
   "fr-FR": "FR",
   fr: "FR",
   "it-IT": "IT",
@@ -74,7 +75,7 @@ function findCountry(countryCode: string) {
   return null;
 }
 
-const countryCode = getCountryCodeFromLanguage(navigator.language);
+const countryCode = getCountryCodeFromLanguage(navigator?.language);
 const countrySelected = ref(findCountry(countryCode));
 
 function getCountryCodeFromLanguage(language: string): string {

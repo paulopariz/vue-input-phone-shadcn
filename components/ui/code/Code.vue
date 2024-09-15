@@ -43,7 +43,7 @@ onMounted(async () => {
 </script>
 
 <template>
-  <section class="relative max-w-[99%] overflow-hidden">
+  <section class="relative m-auto w-full max-w-[99%] overflow-hidden">
     <main
       ref="mainRef"
       class="mt-5 max-h-[400px] w-full overflow-hidden rounded-md border border-[#201f23] transition-all"
@@ -52,7 +52,7 @@ onMounted(async () => {
         class="flex h-8 items-center justify-center border-b border-[#201f23] bg-foreground px-2 dark:bg-primary"
       >
         <h1 class="font-medium text-background dark:text-[#06040b]">
-          <span class="text-sm tracking-wider"> {{ props.code.label }} </span>
+          <span class="text-sm tracking-wider max-sm:text-xs"> {{ props.code.label }} </span>
         </h1>
       </header>
 

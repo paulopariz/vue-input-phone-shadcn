@@ -4,8 +4,6 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   modules: ["@nuxtjs/tailwindcss", "shadcn-nuxt", "nuxt-phosphor-icons", "@nuxtjs/color-mode"],
 
-  ssr: false,
-
   app: {
     head: {
       charset: "utf-8",
@@ -44,6 +42,9 @@ export default defineNuxtConfig({
         },
       ],
       link: [{ rel: "icon", type: "image/x-icon", href: "/icon.svg" }],
+      htmlAttrs: {
+        lang: "en",
+      },
     },
   },
 

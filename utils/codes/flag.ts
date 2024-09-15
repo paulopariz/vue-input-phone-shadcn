@@ -18,9 +18,9 @@ const flag = computed(() => {
       <img
         v-if="props.country"
         :src="flag"
-        :alt="props.country"
+        :alt="\`Flag of \${props.country}\`"
         :title="props.country"
-        class="w-full"
+        class="h-3.5 w-5"
       />
     </span>
   </div>

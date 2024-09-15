@@ -28,12 +28,16 @@ function scrollToDocumentation() {
       </p>
       <div class="mt-7 flex justify-between gap-2">
         <div class="flex justify-between gap-2">
-          <Button class="flex items-center gap-1" @click="scrollToDocumentation">
+          <Button
+            aria-label="Access docs"
+            class="flex items-center gap-1"
+            @click="scrollToDocumentation"
+          >
             Docs <PhosphorIconCaretRight weight="bold" />
           </Button>
 
           <NuxtLink href="https://github.com/paulopariz/vue-input-phone-shadcn" target="_blank">
-            <Button variant="secondary" class="flex items-center gap-2">
+            <Button aria-label="Go to github" variant="secondary" class="flex items-center gap-2">
               Github
               <PhosphorIconGithubLogo weight="bold" />
             </Button>

@@ -38,6 +38,6 @@ function onSubmit(values: ISchema) {
     }"
     @submit="onSubmit"
   >
-    <Button type="submit" class="float-end"> Send </Button>
+    <Button aria-label="Send form" type="submit" class="float-end"> Send </Button>
   </AutoForm>
 </template>

@@ -7,8 +7,12 @@ import { type ICode, Code } from "~/components/ui/code";
 import { install } from "~/utils/codes/install";
 import { component } from "~/utils/codes/component";
 import { flag } from "~/utils/codes/flag";
-import { countries } from "~/utils/codes/countries";
+import { countries } from "~/utils/codes/countries-json";
 import { exportComponent } from "~/utils/codes/export";
+
+import { defineAsyncComponent } from "vue";
+
+const Hero = defineAsyncComponent(() => import("~/components/Hero.vue"));
 
 const installComponents: ICode = {
   code: install,
@@ -47,9 +51,9 @@ const exportComponentPhone: ICode = {
   <section class="grid gap-28 py-5">
     <div class="grid gap-20">
       <div class="grid gap-5">
-        <h1 class="text-3xl font-semibold">Demo</h1>
+        <h1 class="text-3xl font-semibold max-sm:text-xl">Demo</h1>
         <div class="rounded-[var(--radius)] border">
-          <div class="m-auto grid h-96 w-2/3 place-items-center">
+          <div class="m-auto grid h-96 w-2/3 place-items-center px-4 max-sm:h-52 max-sm:w-full">
             <PhoneInput />
           </div>
         </div>
@@ -57,21 +61,21 @@ const exportComponentPhone: ICode = {
 
       <div class="grid gap-5">
         <div>
-          <h1 class="text-3xl font-semibold">Component integrated with AutoForm</h1>
-          <p class="mt-1 tracking-wider text-muted-foreground">
+          <h1 class="text-3xl font-semibold max-sm:text-xl">Component integrated with AutoForm</h1>
+          <p class="mt-1 tracking-wider text-muted-foreground max-sm:text-sm">
             Component integrated with Shadcn's AutoForm, with validation via Zod. To access it,
             <NuxtLink
               class="font-medium underline"
               href="https://github.com/paulopariz/vue-input-phone-shadcn/blob/master/components/ui/auto-form/AutoFormFieldPhone.vue"
               target="_blank"
             >
-              click here
+              click here to access the component.
             </NuxtLink>
             .
           </p>
         </div>
         <div class="rounded-[var(--radius)] border">
-          <div class="m-auto grid h-96 w-2/3 place-items-center">
+          <div class="m-auto grid h-96 w-2/3 place-items-center px-4 max-sm:h-52 max-sm:w-full">
             <ComponentPhoneView />
           </div>
         </div>
@@ -81,7 +85,7 @@ const exportComponentPhone: ICode = {
     <Separator />
 
     <div id="docs">
-      <h1 class="mb-6 text-3xl font-semibold">Configure components:</h1>
+      <h1 class="mb-6 text-3xl font-semibold max-sm:text-xl">Configure components:</h1>
 
       <div class="ml-4 mt-12 grid gap-20 border-l pl-8 max-sm:ml-0 max-sm:border-l-0 max-sm:pl-0">
         <Docs>
