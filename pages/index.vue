@@ -9,6 +9,7 @@ import { component } from "~/utils/codes/component";
 import { flag } from "~/utils/codes/flag";
 import { countries } from "~/utils/codes/countries-json";
 import { exportComponent } from "~/utils/codes/export";
+import { installVMask } from "~/utils/codes/installVMask";
 
 import { defineAsyncComponent } from "vue";
 
@@ -16,6 +17,12 @@ const Hero = defineAsyncComponent(() => import("~/components/Hero.vue"));
 
 const installComponents: ICode = {
   code: install,
+  label: "Terminal",
+  lang: "zsh",
+};
+
+const installVMaska: ICode = {
+  code: installVMask,
   label: "Terminal",
   lang: "zsh",
 };
@@ -98,7 +105,13 @@ const exportComponentPhone: ICode = {
         </Docs>
 
         <Docs>
-          <DocsTitle position="2"> Component PhoneInput </DocsTitle>
+          <DocsTitle position="2"> Install vMaska </DocsTitle>
+          <DocsSubtitle> To format the number, install the vMaska library: </DocsSubtitle>
+          <Code :code="installVMaska" />
+        </Docs>
+
+        <Docs>
+          <DocsTitle position="3"> Component PhoneInput </DocsTitle>
           <DocsSubtitle>
             In your components folder, create a new subfolder called "phone". Then add a file called
             PhoneInput.vue and insert the following code:
@@ -107,7 +120,7 @@ const exportComponentPhone: ICode = {
         </Docs>
 
         <Docs>
-          <DocsTitle position="3"> Component FlagCountry </DocsTitle>
+          <DocsTitle position="4"> Component FlagCountry </DocsTitle>
           <DocsSubtitle>
             Now, create a file called FlagCountry.vue in the phone folder and add the following
             content:
@@ -116,7 +129,7 @@ const exportComponentPhone: ICode = {
         </Docs>
 
         <Docs>
-          <DocsTitle position="4"> Countries </DocsTitle>
+          <DocsTitle position="5"> Countries </DocsTitle>
           <DocsSubtitle>
             Now let's add the JSON that contains the country information and corresponding phone
             formatting. To do this, create a file called countries.ts:
@@ -125,7 +138,7 @@ const exportComponentPhone: ICode = {
         </Docs>
 
         <Docs>
-          <DocsTitle position="5"> Export </DocsTitle>
+          <DocsTitle position="6"> Export </DocsTitle>
           <DocsSubtitle>
             Finally, to export the PhoneInput.vue component, create a file called index.ts inside
             the phone folder:
