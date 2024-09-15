@@ -18,22 +18,34 @@ import { countriesByContinent, type ICountry } from "./countries";
 
 import { vMaska } from "maska";
 
-const props = defineProps<{
+interface IProps {
   modelValue?: string;
   disabled?: boolean;
   placeholder?: string;
+  placeholderSearch?: string;
+  messageEmpty?: string;
   defaultCountry?: string;
-}>();
+}
+
+const {
+  modelValue,
+  disabled,
+  placeholder,
+  placeholderSearch = "Search country...",
+  messageEmpty = "No country found.",
+  defaultCountry,
+} = defineProps<IProps>();
 
 const emit = defineEmits<{
   // eslint-disable-next-line no-unused-vars
   (e: "update:modelValue", value: string): void;
 }>();
 
+const refDefaultCountry = ref(defaultCountry);
 const allCountries = computed(() => countriesByContinent);
 
 const open = ref(false);
-const phoneNumber = ref(props.modelValue || "");
+const phoneNumber = ref(modelValue || "");
 
 const languageToCountry: Record<string, string> = {
   "pt-BR": "BR",
@@ -53,7 +65,6 @@ const languageToCountry: Record<string, string> = {
 
 function findCountry(countryCode: string) {
   const allContinents = Object.values(allCountries.value);
-  console.log("allContinents", allContinents);
 
   for (const continent of allContinents) {
     const foundByCode = continent.find((country) => country.code === countryCode);
@@ -67,18 +78,19 @@ const countryCode = getCountryCodeFromLanguage(navigator.language);
 const countrySelected = ref(findCountry(countryCode));
 
 function getCountryCodeFromLanguage(language: string): string {
-  return props.defaultCountry || languageToCountry[language] || "US";
+  return refDefaultCountry.value || languageToCountry[language] || "US";
 }
 
 function selectedCountry(data: ICountry) {
-  if (props.disabled) return;
+  if (disabled) return;
   phoneNumber.value = "";
+  refDefaultCountry.value = "";
   countrySelected.value = data;
   open.value = false;
 }
 
 watch(phoneNumber, (value) => {
-  if (props.disabled) return;
+  if (disabled) return;
   emit(
     "update:modelValue",
     value.length === countrySelected.value?.mask.length ? value : value + "invalid"
@@ -89,7 +101,7 @@ watch(phoneNumber, (value) => {
 <template>
   <Popover v-model:open="open">
     <div class="flex w-full items-center">
-      <PopoverTrigger as-child class="border-r-0" :disabled="props.disabled">
+      <PopoverTrigger as-child class="border-r-0" :disabled="disabled">
         <Button
           variant="outline"
           role="combobox"
@@ -107,17 +119,17 @@ watch(phoneNumber, (value) => {
         v-maska
         type="text"
         class="rounded-l-none"
-        :disabled="props.disabled"
-        :placeholder="props.placeholder || countrySelected?.mask.replace(/#/g, '0')"
+        :disabled="disabled"
+        :placeholder="placeholder || countrySelected?.mask.replace(/#/g, '0')"
         :data-maska="countrySelected ? countrySelected.mask : ''"
       />
     </div>
 
     <PopoverContent align="start" class="w-44 p-0">
       <Command>
-        <CommandInput class="h-9" placeholder="Search country..." />
+        <CommandInput class="h-9" :placeholder="placeholderSearch" />
 
-        <CommandEmpty> No country found. </CommandEmpty>
+        <CommandEmpty> {{ messageEmpty }} </CommandEmpty>
         <CommandList class="list max-h-56">
           <CommandGroup
             v-for="(countries, continent) in countriesByContinent"
